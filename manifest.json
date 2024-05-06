@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Recording Extension",
+  "description": "A small and convenient extension that allows recording",
+  "version": "1.0",
+  "icons": {
+    "16": "./images/icon-16.png",
+    "24": "./images/icon-24.png",
+    "64": "./images/icon-64.png",
+    "128": "./images/icon-128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "./images/icon-16.png",
+      "24": "./images/icon-24.png",
+      "64": "./images/icon-64.png",
+      "128": "./images/icon-128.png"
+    }
+  }
+}
