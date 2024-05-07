@@ -29,7 +29,7 @@ btnStart.addEventListener('click', async () => {
 
 btnPinP.addEventListener('click', createPicInPic);
 
-async function shareScreen() {
+shareScreen = async () => {
   const sharedScreen =
     (await navigator.mediaDevices.getDisplayMedia(VIDEO_CONFIG)) || null;
   videoEle.srcObject = sharedScreen;
@@ -37,9 +37,9 @@ async function shareScreen() {
   if (!backgroundImg.classList.contains('d-none')) {
     backgroundImg.classList.add('d-none');
   }
-}
+};
 
-async function start() {
+start = async () => {
   console.log('Start recording');
   let stream;
   if (videoEle.srcObject) {
@@ -60,9 +60,9 @@ async function start() {
   recorder.onstart = () => {
     btnPinP.click();
   };
-}
+};
 
-function stopRecording() {
+stopRecording = async () => {
   if (!recorder || !videoEle.srcObject) {
     return;
   }
@@ -76,9 +76,9 @@ function stopRecording() {
   }
 
   recorder.stop();
-}
+};
 
-function downloandVideo() {
+downloandVideo = async () => {
   const videoName = `video-${new Date().getTime()}`;
   const blob = new Blob(chunks);
   const blobUrl = URL.createObjectURL(blob);
@@ -102,11 +102,11 @@ function downloandVideo() {
     recorder.onstop = undefined;
     recorder = undefined;
   }
-}
+};
 
-function createPicInPic() {
+createPicInPic = async () => {
   if (!videoEle.srcObject) {
     return;
   }
   videoEle.requestPictureInPicture();
-}
+};
